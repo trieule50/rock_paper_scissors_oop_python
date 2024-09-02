@@ -13,4 +13,6 @@ The winner of the round is awarded a point. The game goes on for as many rounds 
 | Input | Players | Pick Symbol | Symbol |
 | Processing | Gameboard | Decide winner | Results |
 | Processing | Gameboard | Awards point to winner | Points |
+| Processing | Game | Check if participants want to play | Answer |
 | Output | Gameboard | Output who won | Output Message  |
+| Output | Game | End game or new game |  |
