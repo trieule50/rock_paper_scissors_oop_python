@@ -13,8 +13,40 @@ class Participant:
 
 
 class Gameboard:
-    pass
+    def __init__(self):
+        self.player_score = 0
+        self.bot_score = 0
+
+    def print_results(self, player_choice, bot_choice, winner):
+        self.keep_scores(winner)
+        print(f"You chose {player_choice}. The bot chose {bot_choice}. Winner is {winner}! Score is Player(You): {self.player_score}. Bot: {self.bot_score}.")
+
+    def keep_scores(self, winner):
+        if (winner == "you"):
+            self.player_score += 1
+        else:
+            self.bot_score += 1
 
 
 class Game:
-    pass
+    def __init__(self):
+        self.player = Participant()
+        self.bot = Participant()
+        self.winner = None
+
+    def determine_winner(self):
+        outcomes = {
+            ("rock", "scissors"): "You",
+            ("scissors", "rock"): "Bot",
+            ("paper", "rock"): "You",
+            ("rock", "paper"): "Bot",
+            ("scissors", "paper"): "You",
+            ("paper", "scissors"): "Bot"
+        }
+        # Check for tie
+        if self.player.choice == self.bot.choice:
+            self.winner = "No one, it's a tie!"
+        else:
+            self.winner = outcomes.get((self.player.choice, self.bot.choice), "Error")
+
+        return self.winner
