@@ -9,7 +9,7 @@ The winner of the round is awarded a point. The game goes on for as many rounds 
 ## Model an OOP system
 
 | Phase | Actor | Behavior | Data |
------------------------------------
+|-------|-------|----------|------|
 | Input | Players | Pick Symbol | Symbol |
 | Processing | Gameboard | Decide winner | Results |
 | Processing | Gameboard | Awards point to winner | Points |
