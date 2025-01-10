@@ -4,12 +4,12 @@ class Participant:
 
     def choose_an_option(self, choice):
         valid_options = ["rock", "paper", "scissors"]
-        choice = choice.lower()
+        choice = choice.strip().lower()
 
         if choice in valid_options:
             self.choice = choice
         else:
-            print("Please choose one of the following: Rock, Paper, Scissors")
+            print("Please choose one of the following: rock, paper, scissors")
 
 
 class Gameboard:
@@ -22,7 +22,7 @@ class Gameboard:
         print(f"You chose {player_choice}. The bot chose {bot_choice}. Winner is {winner}! Score is Player(You): {self.player_score}. Bot: {self.bot_score}.")
 
     def keep_scores(self, winner):
-        if (winner == "you"):
+        if (winner == "You"):
             self.player_score += 1
         else:
             self.bot_score += 1
@@ -43,7 +43,6 @@ class Game:
             ("scissors", "paper"): "You",
             ("paper", "scissors"): "Bot"
         }
-        # Check for tie
         if self.player.choice == self.bot.choice:
             self.winner = "No one, it's a tie!"
         else:
